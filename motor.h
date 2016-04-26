@@ -2,7 +2,7 @@
 * File: motor.h
 * Written by: Jacob Schwell & Ryan Cuddy
 * EECE 287
-* 4/17/2016
+* 4/26/2016
 */
 #ifndef MOTOR_H
 #define MOTOR_H
@@ -45,6 +45,12 @@ void rotateCW();
 // rotate in reverse, causing the rover to spin counter-clockwise indefinately
 void rotateCCW();
 
+// hardTurnRight() sets the left wheel to forward and the right wheel to break to create a turn radius smaller than curveRight(), but larger than rotateCCW()
+void hardTurnRight();
+
+// hardTurnLeft() sets the right wheel to forward and the left wheel to break in order to create a turn radius smaller than curveLeft(), but larger than rotateCW()
+void hardTurnLeft();
+
 // curveCW() sets the left wheel to forward and the right wheel to coast to 
 // cause the rover to make a wide turn
 void curveRight();
@@ -64,23 +70,5 @@ void setMotorR(unsigned char dir);
 // REVERSE, COAST, or BRAKE
 void setMotorL(unsigned char dir);
 
-// navigateMaze() utilizes the functions in this file as well as qtr_driver.h to
-// drive through the maze.
-// breaking up the qtr_sensor into 4 components, if the middle two are both on 
-// the line, it will go forward, if the rover has the opportunity to turn left 
-// (the left two sensors are on a line), it will do so, then ontinue to drive
-// forward. The sensors will ensure that keeping the middle two sections on the 
-// line are a priority to make sure the rover does not get lost.
-void navigateMaze();
-
-void U_turn();
-
-void left90();
-
-void right90();
-
-void hardTurnRight();
-
-void hardTurnLeft();
 
 #endif

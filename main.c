@@ -2,19 +2,17 @@
 * File: main.c
 * Written by: Jacob Schwell & Ryan Cuddy
 * EECE 287
-* 4/17/2016
-* Description: This file utilizes the functions declared and defined in motor.h
-* and motor.c, respectively, in order to guide the Rover 5 through a maze.
+* 4/26/2016
+* Description: This holds the main function to set up the QTR and motors in 
+* before running the function to navigate the Rover 5 through the maze
 */
 #include "motor.h"
-
-//#include "qtr_driver.h"
-//#include <util/delay.h>
+#include "maze.h"
 
 int main(){
 	setUp();
+	init_QTR_driver();
 
-	
 	navigateMaze();
 
 	return 0;
