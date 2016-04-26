@@ -8,4 +8,4 @@ upload: all
 	avrdude -c buspirate -P /dev/buspirate -p atmega328 -U flash:w:main
 
 clean: main
-	rm -f main *.o *.bit
+	rm -f main *.o 
