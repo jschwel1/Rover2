@@ -2,7 +2,8 @@
 * File: motor.c
 * Written by: Jacob Schwell & Ryan Cuddy
 * EECE 287
-* 4/17/2016
+* 4/25/2016
+* This file contains the implementations of all the functions used in motor.h.
 */
 
 #include "motor.h"
