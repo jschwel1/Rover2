@@ -7,7 +7,9 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 
-#define MOTORS PORTC
+#define MOTOR_PORT PORTC
+#define MOTOR_PORT_DDR DDRC
+#define MOTOR_MASK 0xF0
 #define MOTOR_L 2 
 #define MOTOR_R 0 
 
@@ -17,11 +19,6 @@
 #define BRAKE 0x03
 
 #define F_CPU 1000000UL  // 16 MHz
-
-#define BLACK 0xFF
-#define WHITE 0x00
-#define L4_SENSORS 0xF0
-#define R4_SENSORS 0x0F
 
 
 /*************** functions *****************/

@@ -18,13 +18,11 @@
 void coast(){
 	setMotorR(COAST);
 	setMotorL(COAST);
-	_delay_ms(10);
 }
 
 void stop(){
 	setMotorR(BRAKE);
 	setMotorL(BRAKE);
-	_delay_ms(10);
 }
 
 void driveForward(){
@@ -69,16 +67,16 @@ void curveLeft(){
 
 void setUp(){
 	// set motor & encoder port/pin to 
-	DDRC = 0x0F;
+	MOTOR_PORT_DDR = MOTOR_MASK;
 }
 
 
 void setMotorR(unsigned char dir){
-	MOTORS = (MOTORS&~(0x03<<MOTOR_R) | (dir << MOTOR_R));
+	MOTOR_PORT = (MOTOR_PORT&~(0x03<<MOTOR_R) | (dir << MOTOR_R));
 }
 
 void setMotorL(unsigned char dir){
-	MOTORS = (MOTORS&~(0x03<<MOTOR_L) | (dir << MOTOR_L));
+	MOTOR_PORT = (MOTOR_PORT&~(0x03<<MOTOR_L) | (dir << MOTOR_L));
 }
 
 

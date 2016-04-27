@@ -4,13 +4,18 @@
 * EECE 287
 * 04/26/2016
 * Description: This file contains the function implementations to help guide
-* the rover through a maze.
+* the rover through a maze. It utilizes a combination of QTR_driver and motor
+* functions.
 */
 
 #include "maze.h"
+#include "qtr_driver.h"
+#include "motor.h"
 
 void left90(){
 	unsigned char value = get_QTR_value();
+	// Spin until the rover is almost all the way back on the line
+	// or close enough that it can easily correct itself
 	while (value == 0xFF || value == 0x7F || value == 0x3F){
 		rotateCCW();
 		value = get_QTR_value();
@@ -20,6 +25,8 @@ void left90(){
 
 void right90(){
 	unsigned char value = get_QTR_value();
+	// Spin until the rover is almost all the way back on the line 
+	// or close enough that it can easily correct itself
 	while (value == 0x00 || value == 0x01 || value == 0x03){
 		rotateCW();
 		value = get_QTR_value();
