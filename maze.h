@@ -14,10 +14,4 @@
 // drive through the maze using a right-hand search.
 void navigateMaze();
 
-// left90() is used to spin the rover counter-clockwise until it sees the line again
-void left90();
-
-// left90() is used to spin the rover counter-clockwise until it sees the line again
-void right90();
-
 #endif

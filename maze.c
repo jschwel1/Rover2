@@ -12,28 +12,6 @@
 #include "qtr_driver.h"
 #include "motor.h"
 
-void left90(){
-	unsigned char value = get_QTR_value();
-	// Spin until the rover is almost all the way back on the line
-	// or close enough that it can easily correct itself
-	while (value == 0xFF || value == 0x7F || value == 0x3F){
-		rotateCCW();
-		value = get_QTR_value();
-	}
-	return;
-}
-
-void right90(){
-	unsigned char value = get_QTR_value();
-	// Spin until the rover is almost all the way back on the line 
-	// or close enough that it can easily correct itself
-	while (value == 0x00 || value == 0x01 || value == 0x03){
-		rotateCW();
-		value = get_QTR_value();
-	}
-	return;
-}
-
 void navigateMaze(){
 	unsigned char value;
 	// Operates by right-hand search:
@@ -46,18 +24,18 @@ void navigateMaze(){
 		
 		// follow a line
 		if (value == 0x0F) driveForward(); 		// 0000 1111
-		else if (value == 0x1F) curveLeft(); 	// 0001 1111
-		else if (value == 0x3F) rotateCCW(); 	// 0011 1111
-		else if (value == 0x07) curveRight(); 	// 0000 0111
-		else if (value == 0x03) rotateCW(); 	// 0000 0011
+		else if (value == 0x1F) curveLeft(); 	// 0001 1111 Was Left
+		else if (value == 0x3F) rotateCCW(); 	// 0011 1111 Was CCW
+		else if (value == 0x07) curveRight(); 	// 0000 0111 Was Right
+		else if (value == 0x03) rotateCW(); 	// 0000 0011 Was CW
 
 		// right turn
-		else if (value == 0x00) right90(); 		// 0000 0000
-		else if (value == 0x01) rotateCW(); 	// 0000 0001
+		else if (value == 0x00) rotateCW(); 	// 0000 0000 Was Right
+		else if (value == 0x01) rotateCW(); 	// 0000 0001 Was CW
 
 		// dead end/left turn
-		else if (value == 0xFF) left90();		// 1111 1111
-		else if (value == 0x7F) rotateCCW();	// 0111 1111
+		else if (value == 0xFF) rotateCCW();		// 1111 1111 Was Left 
+		else if (value == 0x7F) rotateCCW();		// 0111 1111 Was CCW
 		
 		// default:
 		else driveBackward();
