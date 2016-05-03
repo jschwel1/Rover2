@@ -7,13 +7,15 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 
+#include <avr/io.h>
+
 #define MOTOR_PORT PORTC
 #define MOTOR_PORT_DDR DDRC
 #define MOTOR_MASK 0xF0
 #define MOTOR_L 2 
 #define MOTOR_R 0 
 
-#define FORWARD 0x02 // only two bits are required for motor directions
+#define FORWARD 0x02 
 #define REVERSE 0x01
 #define COAST 0x00
 #define BRAKE 0x03
