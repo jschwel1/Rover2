@@ -10,8 +10,8 @@
 #ifndef MAZE_H
 #define MAZE_H
 
-// navigateMaze() utilizes the functions in this file, motor.h, and qtr_driver.h to
-// drive through the maze using a right-hand search.
+// navigateMaze() utilizes the functions in this file, motor.h, 
+// and qtr_driver.h to drive through the maze using a right-hand search.
 void navigateMaze();
 
 #endif

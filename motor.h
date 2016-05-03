@@ -18,7 +18,7 @@
 #define COAST 0x00
 #define BRAKE 0x03
 
-#define F_CPU 1000000UL  // 16 MHz
+//#define F_CPU 1000000UL  // 16 MHz
 
 
 /*************** functions *****************/

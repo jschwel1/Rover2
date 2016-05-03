@@ -7,11 +7,8 @@
 */
 
 #include "motor.h"
-#include "qtr_driver.h"
-#include <math.h>
-#include <stdlib.h>
-#include <util/delay.h>
-#include <avr/io.h>
+//#include "qtr_driver.h"
+//#include <avr/io.h>
 
 
 
