@@ -2,14 +2,11 @@
 * File: motor.c
 * Written by: Jacob Schwell & Ryan Cuddy
 * EECE 287
-* 4/26/2016
+* 05/04/2016
 * This file contains the implementations of all the functions used in motor.h.
 */
 
 #include "motor.h"
-//#include "qtr_driver.h"
-//#include <avr/io.h>
-
 
 
 void coast(){

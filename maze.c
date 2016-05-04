@@ -2,7 +2,7 @@
 * File: Maze.c
 * Written by: Jacob Schwell & Ryan Cuddy
 * EECE 287
-* 04/26/2016
+* 05/04/2016
 * Description: This file contains the function implementations to help guide
 * the rover through a maze. It utilizes a combination of QTR_driver and motor
 * functions.
@@ -27,15 +27,15 @@ void navigateMaze(){
 		else if (QTR_value == RIGHT_DRIFT) curveLeft();
 		else if (QTR_value == OFF_TO_THE_RIGHT) rotateCCW();
 		else if (QTR_value == LEFT_DRIFT) curveRight(); 
-		else if (QTR_value == OFF_TO_THE_LEFT) rotateCW(); 		// 0000 0011
+		else if (QTR_value == OFF_TO_THE_LEFT) rotateCW();
 
 		// right turn
-		else if (QTR_value == ALL_WHITE) rotateCW(); 			// 0000 0000
-		else if (QTR_value == ALMOST_ALL_WHITE) rotateCW(); 	// 0000 0001
+		else if (QTR_value == ALL_WHITE) rotateCW(); 
+		else if (QTR_value == ALMOST_ALL_WHITE) rotateCW();
 
 		// dead end/left turn
-		else if (QTR_value == ALL_BLACK) rotateCCW();			// 1111 1111 
-		else if (QTR_value == ALMOST_ALL_BLACK) rotateCCW();	// 0111 1111 
+		else if (QTR_value == ALL_BLACK) rotateCCW();
+		else if (QTR_value == ALMOST_ALL_BLACK) rotateCCW();
 		
 		// default:
 		else driveBackward();
