@@ -23,10 +23,10 @@ void navigateMaze(){
 		QTR_value = get_QTR_value();
 		
 		// follow a line
-		if (QTR_value == ON_LINE) driveForward(); 				// 0000 1111
-		else if (QTR_value == RIGHT_DRIFT) curveLeft(); 		// 0001 1111
-		else if (QTR_value == OFF_TO_THE_RIGHT) rotateCCW(); 	// 0011 1111
-		else if (QTR_value == LEFT_DRIFT) curveRight(); 		// 0000 0111
+		if (QTR_value == ON_LINE) driveForward(); 
+		else if (QTR_value == RIGHT_DRIFT) curveLeft();
+		else if (QTR_value == OFF_TO_THE_RIGHT) rotateCCW();
+		else if (QTR_value == LEFT_DRIFT) curveRight(); 
 		else if (QTR_value == OFF_TO_THE_LEFT) rotateCW(); 		// 0000 0011
 
 		// right turn
